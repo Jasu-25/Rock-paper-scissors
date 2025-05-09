@@ -7,6 +7,15 @@ let obj = {
 
 function game(option) {
   obj = JSON.parse(localStorage.getItem("score"));
+  if(obj === null){
+    obj = {
+      win: 0,
+      loss: 0,
+      tie: 0,
+      palyed: 0
+    };
+  }
+  else{
   let randommove = Math.random();
   let move = '';
   let result = '';
@@ -115,5 +124,5 @@ function game(option) {
     p2.innerHTML = `win: ${obj.win} loss: ${obj.loss} tie: ${obj.tie} games played : ${obj.palyed}`;
     document.querySelector(".p3").innerHTML = ` ${result}`
   }
-
+  }
 }
